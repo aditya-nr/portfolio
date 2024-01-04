@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 
-import { images } from '../../constants';
 import './About.scss';
 import client, { urlFor } from '../../client';
-
+import { AppWrap } from '../../wrapper';
 
 const About = () => {
     const [abouts, setAbouts] = useState([]);
@@ -19,7 +18,7 @@ const About = () => {
     }, []);
 
     return (
-        <div className='app__about'>
+        <div >
             <h2 className='head-text'>I know that <span>Good Apps</span> <br /> means <span>Good Business</span></h2>
 
             <div className='app__profile'>
@@ -41,4 +40,4 @@ const About = () => {
     )
 }
 
-export default About
+export default AppWrap(About, 'about')
